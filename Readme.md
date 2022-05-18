@@ -9,9 +9,9 @@ To print numeric data types into:
 
 ## Key String Formatting Parameters
 
-- `#,000.00`
+- `#,##0.00`
 - `#,000`
-- `$#,000.00`
+- `$#,##0.00`
 - `$#,000`
 - `0%`
 
@@ -105,19 +105,19 @@ revenue = revenue.toString("#,000.0");
 info revenue; // Returns 1,000,000.0
 
 revenue = 1000000.05;
-revenue = revenue.toString("#,000.00");
+revenue = revenue.toString("#,##0.00");
 info revenue; // Returns 1,000,000.05
 ```
 
 At this point, it’s good to note the data is truncated, and does not round up, or round down. So selecting the amount of decimal places can be important.
 
-ℹ️ If you add more 0’s, like `#,000.00000`, this would return 5 decimal places.
+ℹ️ If you add more 0’s, like `#,##0.00000`, this would return 5 decimal places.
 
 Now that we know how to add decimal places, let’s look at how do we add the dollar sign by converting the numeric data type into a currency text string.
 
 ```jsx
 revenue = 1000000.05;
-revenue = revenue.toString("$#,000.00");
+revenue = revenue.toString("$#,##0.00");
 info revenue; // Returns $1,000,000.05
 ```
 
@@ -129,7 +129,7 @@ Meaning, if you wanted to print the Pound Sterling sign as part of the currency.
 
 ```jsx
 revenue = 1000000.05;
-revenue = revenue.toString("£#,000.00");
+revenue = revenue.toString("£#,##0.00");
 info revenue; // Returns £1,000,000.05
 ```
 
