@@ -10,9 +10,9 @@ To print numeric data types into:
 ## Key String Formatting Parameters
 
 - `#,##0.00`
-- `#,000`
+- `#,##0`
 - `$#,##0.00`
-- `$#,000`
+- `$#,##0`
 - `0%`
 
 ---
@@ -83,13 +83,13 @@ There are other creative ways to run this through a loop and get to the expected
 
 `toString()`, according to the [Zoho Documentation](https://www.zoho.com/deluge/help/functions/common/tostring.html), allows us to change date and date time data type and format it into something meaningful to read for the end users.
 
-It appears that `toString()` allows more than just printing date time. As mentioned in the Key String Formatting Parameters earlier on in this document, the string formatting to use will be `#,000` to help understand the results.
+It appears that `toString()` allows more than just printing date time. As mentioned in the Key String Formatting Parameters earlier on in this document, the string formatting to use will be `#,##0` to help understand the results.
 
 If we used the same revenue of *one million and five cents* and would like to print it out as a currency:
 
 ```jsx
 revenue = 1000000.05;
-revenue = revenue.toString("#,000");
+revenue = revenue.toString("#,##0");
 info revenue; // Returns 1,000,000
 ```
 
@@ -101,7 +101,7 @@ It is good to know that data can be truncated when we do not specify decimal pla
 
 ```jsx
 revenue = 1000000.05;
-revenue = revenue.toString("#,000.0");
+revenue = revenue.toString("#,##0.0");
 info revenue; // Returns 1,000,000.0
 
 revenue = 1000000.05;
